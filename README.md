@@ -23,40 +23,31 @@
 
 
 
+
 ## item テーブル
 
-| Column     | Type       | Options                        |
-| -----------| ---------- | ------------------------------ |
-| user       | references |                                |
-| name       | string     | null: false                    |
-| description| string     | null: false                    |
-| category   | text       | null: false                    |
-| state      | string     | null: false                    |
-| ship_cost  | string     | null: false                    |
-| source_area| string     | null: false                    |
-| ship_day   | string     | null: false                    |
-| price      | string     | null: false                    |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| user          | references |                                |
+| name          | string     | null: false                    |
+| description   | string     | null: false                    |
+| category_id   | text       | null: false                    |
+| state_id      | string     | null: false                    |
+| ship_cost_id  | string     | null: false                    |
+| source_area_id| string     | null: false                    |
+| ship_day_id   | string     | null: false                    |
+| price         | string     | null: false                    |
 
 
 ### Association
 
 - has_many :comments
 - belongs_to :user dependent: :destroy
-- belongs_to :ategory dependent: :destroy
-- has_many :images ependent: :destroy
+- belongs_to :category dependent: :destroy
+- has_many :images dependent: :destroy
+- has_one :category dependent: :destroy
 
 
-## image テーブル
-
-| Column     | Type       | Options                        |
-| -----------| ---------- | ------------------------------ |
-| image      | string     | null: false                    |
-| item_id    | integer    | null: false                    |
-
-
-### Association
-
-- belongs_to :item
 
 
 ## category テーブル
@@ -76,11 +67,7 @@
 
 | Column        | Type       | Options                        |
 | -----------   | ---------- | ------------------------------ |
-| user_id       | integer    |                                |
-| first_name    | string     | null: false                    |
-| last_name     | string     | null: false                    |
-| k_first_name  | string     | null: false                    |
-| k_last_name   | string     | null: false                    |
+| user          | references | null: false                    |
 | post_code     | string     | null: false                    |
 | prefecture    | string     | null: false                    |
 | city          | string     | null: false                    |
