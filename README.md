@@ -15,7 +15,7 @@
 
 ### Association
 
-- has_one :purchase_management dependent: :destroy
+- has_many :purchase_management dependent: :destroy
 - has_many :items dependent: :destroy
 
 
@@ -26,13 +26,13 @@
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | name          | string     | null: false                    |
-| description   | string     | null: false                    |
+| description   | text       | null: false                    |
 | category_id   | integer    | null: false                    |
 | state_id      | integer    | null: false                    |
 | ship_cost_id  | integer    | null: false                    |
 | source_area_id| integer    | null: false                    |
 | ship_day_id   | integer    | null: false                    |
-| user_id       | string     | null: false                    |
+| user_id       | string     | null: false, foreign_key: true |
 
 
 ### Association
@@ -73,7 +73,7 @@
 | address       | string     | null: false                    |
 | building_name | string     |                                |
 | phone_number  | string     | null: false                    |
-|purchase_management_id | references | null: false, foreign_key: true |
+|purchase_management | references | null: false, foreign_key: true |
 
 ### Association
 
