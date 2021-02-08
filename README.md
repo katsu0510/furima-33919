@@ -21,6 +21,7 @@
 
 
 
+
 ## items テーブル
 
 | Column        | Type       | Options                        |
