@@ -32,7 +32,7 @@
 | ship_cost_id  | integer    | null: false                    |
 | prefecture_id | integer    | null: false                    |
 | ship_day_id   | integer    | null: false                    |
-| user_id       | string     | null: false, foreign_key: true |
+| user          | references | null: false, foreign_key: true |
 
 
 ### Association
