@@ -15,13 +15,13 @@
 
 ### Association
 
-- has_many :purchase_management dependent: :destroy
+- has_many :purchase_managements dependent: :destroy
 - has_many :items dependent: :destroy
 
 
 
 
-## item テーブル
+## items テーブル
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
@@ -30,7 +30,7 @@
 | category_id   | integer    | null: false                    |
 | state_id      | integer    | null: false                    |
 | ship_cost_id  | integer    | null: false                    |
-| source_area_id| integer    | null: false                    |
+| prefecture_id | integer    | null: false                    |
 | ship_day_id   | integer    | null: false                    |
 | user_id       | string     | null: false, foreign_key: true |
 
@@ -46,7 +46,7 @@
 
 
 
-## purchase_management テーブル
+## purchase_managements テーブル
 
 | Column        | Type       | Options                        |
 | -----------   | ---------- | ------------------------------ |
