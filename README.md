@@ -80,3 +80,5 @@
 ### Association
 
 - belongs_to :purchase_management
+
+
