@@ -25,7 +25,7 @@ class Item < ApplicationRecord
       validates :ship_day_id
       end
    
-    validates :price, format: {with: /\A[0-9]+\z/ }
+    validates :price, :numericality => {:only_integer => true, :greater_than_or_equal_to => 300, :less_than_or_equal_to => 999999}, format: {with: /\A[0-9]+\z/ }
     validates :image
     
     
