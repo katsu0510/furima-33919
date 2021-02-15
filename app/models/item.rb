@@ -17,7 +17,7 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :name
     validates :description
-      with_options numericality: { other_than: 1 } do
+      with_options numericality: { other_than: 0 } do
       validates :category_id
       validates :state_id
       validates :ship_cost_id
