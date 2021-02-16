@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :ship_day
   belongs_to :user
-  has_one :purchase_management, dependent: :destroy
+  #has_one :purchase_management, dependent: :destroy
   has_one_attached :image
   with_options presence: true do
     validates :name
