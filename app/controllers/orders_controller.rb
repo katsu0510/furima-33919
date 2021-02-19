@@ -36,8 +36,6 @@ class OrdersController < ApplicationController
     )
   end
 
-  private
-
   def set_item
     @item = Item.find(params[:item_id])
   end
@@ -52,9 +50,5 @@ class OrdersController < ApplicationController
       redirect_to root_path
     end
   end
-
-
-
-
 
 end

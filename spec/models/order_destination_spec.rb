@@ -30,7 +30,7 @@ RSpec.describe OrderDestination, type: :model do
         expect(@order_destination.errors.full_messages).to include('Post code is invalid. Include hyphen(-)')
       end
       it 'prefecture_idを選択していないと保存できないこと' do
-        @order_destination.prefecture_id = '--'
+        @order_destination.prefecture_id = 0
         @order_destination.valid?
         expect(@order_destination.errors.full_messages).to include("Prefecture can't be blank")
       end
@@ -77,6 +77,11 @@ RSpec.describe OrderDestination, type: :model do
       end
       it 'phone_numberが英数混合だと保存できないこと' do
         @order_destination.phone_number= '12345678abc'
+        @order_destination.valid?
+        expect(@order_destination.errors.full_messages).to include("Phone number is invalid")
+      end
+      it 'phone_numberが全角数字だと保存できないこと' do
+        @order_destination.phone_number= '１２３４５６７８９０１'
         @order_destination.valid?
         expect(@order_destination.errors.full_messages).to include("Phone number is invalid")
       end
