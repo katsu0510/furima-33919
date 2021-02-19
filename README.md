@@ -15,7 +15,7 @@
 
 ### Association
 
-- has_many :purchase_managements dependent: :destroy
+- has_many :orders dependent: :destroy
 - has_many :items dependent: :destroy
 
 
@@ -39,7 +39,7 @@
 
 ### Association
 - belongs_to :user
-- has_one :purchase_management dependent: :destroy
+- has_one :order dependent: :destroy
 
 
 
@@ -48,7 +48,7 @@
 
 
 
-## purchase_managements テーブル
+## orders テーブル
 
 | Column        | Type       | Options                        |
 | -----------   | ---------- | ------------------------------ |
@@ -75,10 +75,10 @@
 | address       | string     | null: false                    |
 | building_name | string     |                                |
 | phone_number  | string     | null: false                    |
-|purchase_management | references | null: false, foreign_key: true |
+| order | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :purchase_management
+- belongs_to :order
 
 
