@@ -2,14 +2,14 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, only:[:index, :create]
   before_action :set_item, only:[:index, :create]
   before_action :order_self, only:[:index, :create]
+  before_action :order_sold, only:[:index, :create]
 
   def index
     @order_destination = OrderDestination.new
-    @item = Item.find(params[:item_id])
+   
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @order_destination = OrderDestination.new(order_params)
  
     if @order_destination.valid?
@@ -47,6 +47,14 @@ class OrdersController < ApplicationController
       redirect_to root_path
     end
   end
+  def order_sold
+    if @item.order.present? 
+      redirect_to root_path
+    end
+  end
+
+
+
 
 
 end
